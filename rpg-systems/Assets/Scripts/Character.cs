@@ -7,7 +7,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
 
-    public string CharacterName;
-    public Sprite sprite;
+    public string _characterName;
+    public Sprite _sprite;
 
 }

@@ -5,11 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class Dialogue 
 {
-    [SerializeField]
-    private string CharacterName;
+    public Character _character;
 
     [TextArea]
-    [SerializeField]
-    private string[] sentences;
+    public string[] _sentences;
 
 }
