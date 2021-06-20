@@ -5,27 +5,28 @@ using UnityEngine;
 public class Interaction : MonoBehaviour
 {
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool interactOn = false;
+    [SerializeField]
+    private GameObject target;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (interactOn && Input.GetKeyDown(KeyCode.F) == true && target != null){ target.SendMessage("InteractOn",SendMessageOptions.DontRequireReceiver);}
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-
-        SendMessage("InteractOn", collision.gameObject);
-
-
-
+        interactOn = true;
+        target = collision.gameObject;
     }
 
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        interactOn = false;
+        target = null;
+
+    }
 }

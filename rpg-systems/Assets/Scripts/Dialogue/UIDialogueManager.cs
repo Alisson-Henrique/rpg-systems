@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIDialogueManager : MonoBehaviour
 {
   
     public GameObject UIContainer;
-    public Sprite _characterimage;
+    public Image _characterimage;
     public TMP_Text _nameCharacter;
     public TMP_Text _dialogue;
 
@@ -30,7 +31,7 @@ public class UIDialogueManager : MonoBehaviour
 
     private void NextTalker(Dialogue dialogue)
     {
-        _characterimage = dialogue._character._sprite;
+        _characterimage.sprite = dialogue._character._sprite;
         _nameCharacter.text = dialogue._character._characterName;
 
 

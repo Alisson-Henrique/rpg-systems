@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     private bool endCurrenteTalker = true;
 
-    private bool buttonClicked = true;
+    private bool buttonClicked = false;
 
     void Awake()
     {
@@ -41,7 +41,6 @@ public class DialogueManager : MonoBehaviour
             ResetText?.Invoke();
             NextTalker?.Invoke(currentDialogue._dialogues[i]);
             StartCoroutine(ShowDialogue(currentDialogue._dialogues[i]._sentences));
-
             yield return new WaitUntil(() => endCurrenteTalker);
         }
 
@@ -51,19 +50,24 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ShowDialogue(string[] sentences)
     {
         endCurrenteTalker = false;
-
+    
         foreach(var sentence in sentences)
         {
-            yield return new WaitUntil(() => buttonClicked = true);
-            ShowMenssage?.Invoke(sentence);
-            buttonClicked = false;
+            ShowSentence(sentence);
+            yield return new WaitUntil(() => buttonClicked == true);
         }
 
         endCurrenteTalker = true;
 
     }
 
-    private void ButtonWasClicked() => 
+    private void ShowSentence(string sentence)
+    {
+        ShowMenssage?.Invoke(sentence);
+        buttonClicked = false;
+    }
+
+    public void ButtonWasClicked() => 
         buttonClicked = true;
    
 }

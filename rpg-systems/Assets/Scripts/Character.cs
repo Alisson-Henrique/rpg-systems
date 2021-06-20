@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName ="Create Caracter",menuName ="new Caracter")]
-public class Character : MonoBehaviour
+[CreateAssetMenu(menuName = "Create Caracter", fileName = "new Caracter")]
+public class Character: ScriptableObject
 {
 
     public string _characterName;
