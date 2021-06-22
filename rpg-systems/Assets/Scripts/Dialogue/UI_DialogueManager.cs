@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class UIDialogueManager : MonoBehaviour
+public class UI_DialogueManager : MonoBehaviour
 {
   
     public GameObject UIContainer;
