@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: deba81ae82e63434b8f4a82caa12598e, type: 3}
-  m_Name: Item
+  m_Name: Item01
   m_EditorClassIdentifier: 
-  _id: 0
+  _id: 1
   _itemName: Espada de Ferro
   _icon: {fileID: 21300000, guid: 490de5b67a54a914088038c8d2c8282f, type: 3}
   _description: Espada comum de ferro levemente enferrujada
