@@ -20,6 +20,8 @@ public class UI_Inventory : MonoBehaviour
     {
         _inventory = FindObjectOfType(typeof (Inventory)) as Inventory;
         InstantiateItems();
+        ItemReference.UpdateItemInformation += UpdateItemInformation;
+
     }
 
     public void InstantiateItems()
