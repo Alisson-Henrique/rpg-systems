@@ -6,6 +6,7 @@ using TMPro;
 public class ItemReference : MonoBehaviour
 {
     public Image _icon;
+    private int id;
     public Button button;
 
     public static System.Action<ItemReference> UpdateItemInformation;
@@ -16,6 +17,7 @@ public class ItemReference : MonoBehaviour
     {
         _Item = item;
         _icon.sprite = item._icon;
+        id = item._id;
     }
 
     private void Start()
@@ -26,6 +28,6 @@ public class ItemReference : MonoBehaviour
     }
     void UpdatePanelItem()
     {
-        UpdateItemInformation.Invoke(this);
+        UpdateItemInformation?.Invoke(this);
     }
 }

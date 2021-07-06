@@ -8,6 +8,7 @@ public class Interaction : MonoBehaviour
     private bool interactOn = false;
     [SerializeField]
     private GameObject target;
+    public GameObject InteractIcon;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +21,7 @@ public class Interaction : MonoBehaviour
     {
         interactOn = true;
         target = collision.gameObject;
+        InteractIcon.SetActive(true);
     }
 
 
@@ -27,6 +29,7 @@ public class Interaction : MonoBehaviour
     {
         interactOn = false;
         target = null;
+        InteractIcon.SetActive(false);
 
     }
 }

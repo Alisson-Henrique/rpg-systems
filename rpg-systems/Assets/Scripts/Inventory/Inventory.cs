@@ -10,13 +10,15 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private int _capacity;
 
-    public void AddItem(Item item)
+    public bool AddItem(Item item)
     {
 
         if(items.Count < _capacity)
         {
             items.Add(item);
+            return true;
         }
+        return false;
     }
 
     public void RemoveItem(Item item)

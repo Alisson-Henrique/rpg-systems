@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class ItemWorld : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    public Item itemInfo;
+
+    public static System.Action<Item> AddItem;
+
+    private Inventory _inventory;
+
+    private void Start()
     {
+        _inventory = FindObjectOfType(typeof(Inventory)) as Inventory;
+    }
+
+    public void InteractOn()
+    {
+        if (_inventory.AddItem(itemInfo))
+        {
+            AddItem?.Invoke(itemInfo);
+            Destroy(this.gameObject);
+        }
+      
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
